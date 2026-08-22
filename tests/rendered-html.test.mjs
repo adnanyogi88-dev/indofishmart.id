@@ -37,15 +37,15 @@ test("renders the Indofishmart landing page", async () => {
 
 test("renders the complete article directory", async () => {
   const html = await render("/artikel");
-  assert.match(html, /24 artikel Indofishmart berhasil dipulihkan/);
-  assert.match(html, /Selar Kuning/);
+  assert.match(html, /733 artikel Indofishmart berhasil dipulihkan/);
+  assert.match(html, /Ikan Asin Jambal Roti/);
 });
 
-test("renders representative new and old recovered articles", async () => {
+test("renders representative recovered articles on their original URLs", async () => {
   const recent = await render(
-    "/artikel/cara-membuat-sate-lilit-ikan-khas-bali-resep-praktis-untuk-ibu-rumah-tangga-modern",
+    "/cara-membuat-sate-lilit-ikan-khas-bali-resep-praktis-untuk-ibu-rumah-tangga-modern/",
   );
-  const older = await render("/artikel/resep-masakan-dari-bahan-baku-ikan-mujair");
+  const older = await render("/resep-masakan-dari-bahan-baku-ikan-mujair/");
   assert.match(recent, /Cara Membuat Sate Lilit Ikan Khas Bali/);
   assert.match(older, /Resep Masakan dari Bahan Baku Ikan Mujair/);
 });

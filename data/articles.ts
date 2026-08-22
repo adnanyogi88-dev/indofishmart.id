@@ -1,4 +1,5 @@
-import articleData from "@/content/articles.json";
+import { loadGeneratedArticleBody } from "@/data/article-content.generated";
+import { generatedArticleMetadata } from "@/data/article-metadata.generated";
 
 export type ArticleRecord = {
   slug: string;
@@ -8,13 +9,17 @@ export type ArticleRecord = {
   author: string;
   excerpt: string;
   image: string;
-  contentHtml: string;
+  bodyShard: number;
 };
 
-export const articles = articleData as ArticleRecord[];
+export const articles = generatedArticleMetadata as ArticleRecord[];
 
 export function getArticle(slug: string) {
   return articles.find((article) => article.slug === slug);
+}
+
+export async function getArticleContent(article: ArticleRecord) {
+  return loadGeneratedArticleBody(article.bodyShard, article.slug);
 }
 
 export function formatArticleDate(date: string) {

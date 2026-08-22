@@ -5,8 +5,10 @@ import { ArticleCard } from "@/components/ArticleCard";
 import type { ArticleRecord } from "@/data/articles";
 
 export function ArticleDirectory({ records }: { records: ArticleRecord[] }) {
+  const pageSize = 24;
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("Semua");
+  const [visibleCount, setVisibleCount] = useState(pageSize);
   const categories = ["Semua", ...Array.from(new Set(records.map((article) => article.category)))];
 
   const filtered = useMemo(() => {
@@ -19,6 +21,8 @@ export function ArticleDirectory({ records }: { records: ArticleRecord[] }) {
     });
   }, [category, query, records]);
 
+  const visibleRecords = filtered.slice(0, visibleCount);
+
   return (
     <>
       <div className="article-directory-tools">
@@ -27,7 +31,10 @@ export function ArticleDirectory({ records }: { records: ArticleRecord[] }) {
           <input
             type="search"
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => {
+              setQuery(event.target.value);
+              setVisibleCount(pageSize);
+            }}
             placeholder="Contoh: frozen food, udang, bisnis..."
           />
         </label>
@@ -38,7 +45,10 @@ export function ArticleDirectory({ records }: { records: ArticleRecord[] }) {
               key={item}
               className={category === item ? "filter-button active" : "filter-button"}
               aria-pressed={category === item}
-              onClick={() => setCategory(item)}
+              onClick={() => {
+                setCategory(item);
+                setVisibleCount(pageSize);
+              }}
             >
               {item}
             </button>
@@ -46,11 +56,26 @@ export function ArticleDirectory({ records }: { records: ArticleRecord[] }) {
         </div>
       </div>
 
-      <p className="result-count">Menampilkan {filtered.length} dari {records.length} artikel.</p>
+      <p className="result-count" aria-live="polite">
+        Menampilkan {visibleRecords.length} dari {filtered.length} hasil ({records.length} artikel tersedia).
+      </p>
       {filtered.length > 0 ? (
-        <div className="article-grid article-directory-grid">
-          {filtered.map((article) => <ArticleCard article={article} key={article.slug} />)}
-        </div>
+        <>
+          <div className="article-grid article-directory-grid">
+            {visibleRecords.map((article) => <ArticleCard article={article} key={article.slug} />)}
+          </div>
+          {visibleCount < filtered.length && (
+            <div className="article-load-more">
+              <button
+                className="button button-primary"
+                type="button"
+                onClick={() => setVisibleCount((count) => count + pageSize)}
+              >
+                Muat artikel lainnya
+              </button>
+            </div>
+          )}
+        </>
       ) : (
         <div className="empty-state">
           <h2>Artikel belum ditemukan</h2>

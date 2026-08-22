@@ -1,8 +1,8 @@
 # Indofishmart — Website Lengkap
 
-> Buka `MULAI-DI-SINI.md` terlebih dahulu. Paket rekonstruksi ini menampilkan seluruh halaman dan 457 artikel unik secara jelas di root project.
+> Buka `MULAI-DI-SINI.md` terlebih dahulu. Paket rekonstruksi ini menampilkan seluruh halaman dan 733 artikel publik secara jelas di root project.
 
-Repo Indofishmart yang dibangun ulang dari arsip situs lama. Paket ini sudah menyatukan UI, interface, halaman utama, katalog produk, kemitraan, outlet, kontak, formulir permintaan khusus, dan 457 artikel unik. Sebanyak 447 artikel dipulihkan dari salinan HTML crawl publik dan sisanya berasal dari ZIP awal.
+Repo Indofishmart yang dibangun ulang dari arsip situs lama. Paket ini sudah menyatukan UI, interface, halaman utama, katalog produk, kemitraan, outlet, kontak, formulir permintaan khusus, serta 733 artikel yang cocok dengan arsip URL publik. Isi produksi bersumber dari ekspor WordPress asli; 447 file Markdown hasil rekonstruksi awal tetap disimpan sebagai arsip pembanding.
 
 Proyek menggunakan React, TypeScript, Next.js, dan Vinext agar mudah dikembangkan melalui VS Code.
 
@@ -50,11 +50,13 @@ Ganti `USERNAME` dengan username GitHub Anda.
 - `app/kontak/` - halaman kontak.
 - `app/permintaan-khusus/` - formulir kebutuhan produk.
 - `app/tentang-kami/` - halaman profil Indofishmart.
-- `app/artikel/` - daftar artikel dan halaman baca artikel.
+- `app/artikel/` - daftar artikel dan pengalihan dari format URL baru.
+- `app/[slug]/` - halaman detail artikel pada URL asli yang sudah terindeks.
 - `components/` - header, footer, kartu artikel, formulir, dan komponen bersama.
-- `content/articles.json` - data 457 artikel yang digunakan langsung oleh website.
-- `ARTIKEL_MD/` - 447 artikel hasil rekonstruksi dalam file Markdown terpisah.
-- `LAPORAN-PEMULIHAN.md` - jumlah URL kandidat, artikel valid, dan data yang gagal dipulihkan.
+- `content/articles.json` - manifest dataset 733 artikel.
+- `content/article-data/` - metadata dan isi lengkap artikel dalam shard JSON tervalidasi.
+- `ARTIKEL_MD/` - 447 file hasil rekonstruksi awal dalam format Markdown.
+- `LAPORAN-PEMULIHAN.md` - jumlah URL kandidat, artikel valid, dan metode pemulihan.
 - `data/products.ts` - data katalog produk.
 - `data/site.ts` - email, WhatsApp, dan lokasi.
 - `app/globals.css` - seluruh styling responsif.
@@ -68,7 +70,7 @@ Ganti `USERNAME` dengan username GitHub Anda.
 - Menu navigasi terdapat di `components/SiteHeader.tsx`.
 - Warna merek berada di bagian `:root` dalam `app/globals.css`.
 - Data produk berada di `data/products.ts`.
-- Data artikel berada di `content/articles.json`.
+- Manifest artikel berada di `content/articles.json`; data lengkapnya berada di `content/article-data/`.
 - Data kontak berada di `data/site.ts`.
 
 ## Catatan

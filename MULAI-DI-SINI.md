@@ -16,15 +16,17 @@ npm run dev
 - Halaman utama: `app/page.tsx`
 - Halaman produk: `app/produk/page.tsx`
 - Halaman artikel: `app/artikel/page.tsx`
-- Template halaman detail artikel: `app/artikel/[slug]/page.tsx`
+- Template halaman detail artikel pada URL asli: `app/[slug]/page.tsx`
+- Pengalihan URL `/artikel/nama-artikel`: `app/artikel/[slug]/page.tsx`
 - Halaman kemitraan: `app/kemitraan/page.tsx`
 - Halaman outlet: `app/outlet/page.tsx`
 - Halaman kontak: `app/kontak/page.tsx`
 - Halaman permintaan khusus: `app/permintaan-khusus/page.tsx`
 - Halaman tentang kami: `app/tentang-kami/page.tsx`
-- Artikel terpisah yang mudah dibaca: `ARTIKEL_MD/`
-- Data artikel yang digunakan website: `content/articles.json`
-- Laporan hasil rekonstruksi 447 artikel: `LAPORAN-PEMULIHAN.md`
+- Arsip Markdown hasil pemulihan awal: `ARTIKEL_MD/`
+- Manifest data artikel: `content/articles.json`
+- Metadata dan isi 733 artikel produksi: `content/article-data/`
+- Laporan hasil pemulihan: `LAPORAN-PEMULIHAN.md`
 - Gambar: `public/images/` dan `public/articles/`
 
 Lihat `DAFTAR-HALAMAN.md` dan `DAFTAR-ARTIKEL.md` untuk daftar lengkap.

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Arrow } from "@/components/Arrow";
 import { PageHero } from "@/components/PageHero";
 import { siteContact } from "@/data/site";
@@ -28,7 +29,7 @@ export default function ContactPage() {
           </article>
           <article className="contact-option-card">
             <span>03</span><h2>Permintaan khusus</h2><p>Isi detail jenis produk, volume, dan jadwal kebutuhan Anda.</p>
-            <a className="button button-primary" href="/permintaan-khusus">Isi Formulir <Arrow /></a>
+            <Link className="button button-primary" href="/permintaan-khusus">Isi Formulir <Arrow /></Link>
           </article>
         </div>
       </section>

@@ -4,7 +4,9 @@ Folder ini menyimpan konten artikel yang berhasil dipulihkan dari arsip website 
 
 ## Struktur data
 
-Semua artikel berada dalam `articles.json` dengan kolom:
+`articles.json` adalah manifest dataset. Metadata dan isi lengkap 733 artikel dibagi ke dalam file kecil di `article-data/` agar proses build dan pemuatan halaman tetap stabil.
+
+Metadata artikel memiliki kolom:
 
 - `slug` — alamat unik artikel.
 - `title` — judul artikel.
@@ -13,6 +15,8 @@ Semua artikel berada dalam `articles.json` dengan kolom:
 - `author` — nama penulis yang ditampilkan.
 - `excerpt` — ringkasan untuk kartu artikel dan metadata.
 - `image` — lokasi gambar utama.
-- `contentHtml` — isi lengkap artikel yang sudah dibersihkan dari script WordPress lama.
+- `bodyShard` — nomor file isi artikel.
+
+File `body-*.json` menyimpan `contentHtml` yang sudah dibersihkan dari script, form, dan markup WordPress yang tidak diperlukan.
 
 Gambar artikel yang berhasil dipulihkan berada di `public/articles/`. Jika gambar asli tidak tersedia di arsip, artikel menggunakan gambar yang relevan dari `public/images/`.

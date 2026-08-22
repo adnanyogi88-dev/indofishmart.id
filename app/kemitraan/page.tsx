@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Arrow } from "@/components/Arrow";
 import { ContactBanner } from "@/components/ContactBanner";
 import { PageHero } from "@/components/PageHero";
@@ -29,7 +30,7 @@ export default function PartnershipPage() {
               <li><span>✓</span> Distributor dan kebutuhan pembelian rutin</li>
               <li><span>✓</span> Permintaan ukuran serta kemasan tertentu</li>
             </ul>
-            <a className="button button-primary" href="/permintaan-khusus">Ajukan Kebutuhan <Arrow /></a>
+            <Link className="button button-primary" href="/permintaan-khusus">Ajukan Kebutuhan <Arrow /></Link>
           </div>
         </div>
       </section>

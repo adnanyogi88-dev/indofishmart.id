@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContactBanner } from "@/components/ContactBanner";
 import { PageHero } from "@/components/PageHero";
 import { products } from "@/data/products";
@@ -28,7 +29,7 @@ export default function ProductsPage() {
                 <div className="product-content">
                   <div className="product-title-row"><h2>{product.name}</h2><span aria-hidden="true">↗</span></div>
                   <p>{product.description}</p>
-                  <div className="product-meta"><span>{product.size}</span><a href="/permintaan-khusus">Minta penawaran</a></div>
+                  <div className="product-meta"><span>{product.size}</span><Link href="/permintaan-khusus">Minta penawaran</Link></div>
                 </div>
               </article>
             ))}

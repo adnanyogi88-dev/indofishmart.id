@@ -5,7 +5,7 @@ import { articles } from "@/data/articles";
 
 export const metadata: Metadata = {
   title: "Artikel Indofishmart | Resep, Frozen Food, dan Peluang Bisnis",
-  description: "Kumpulan lebih dari 400 artikel lama Indofishmart yang berhasil dipulihkan, mencakup resep ikan, frozen food, seafood, dan peluang bisnis.",
+  description: "Kumpulan 733 artikel Indofishmart yang dipulihkan dari publikasi asli, mencakup resep ikan, frozen food, seafood, dan peluang bisnis.",
 };
 
 export default function ArticleIndexPage() {

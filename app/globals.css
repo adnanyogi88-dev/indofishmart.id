@@ -937,6 +937,12 @@ img {
   margin-top: 28px;
 }
 
+.article-load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+}
+
 .empty-state {
   margin-top: 28px;
   border: 1px dashed var(--line);
@@ -990,6 +996,10 @@ img {
 .article-reading-layout {
   width: min(900px, calc(100% - 40px));
   padding-block: 72px 100px;
+}
+
+.policy-reading-layout {
+  padding-block: 0;
 }
 
 .article-feature-image {
