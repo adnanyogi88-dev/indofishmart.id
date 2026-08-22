@@ -1,0 +1,60 @@
+import type { Metadata } from "next";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://indofishmart.id"),
+  title: "Indofishmart | Frozen Seafood untuk Rumah dan Usaha",
+  description:
+    "Pilihan ikan, fillet, udang, dan seafood untuk kebutuhan retail, HORECA, reseller, dan distributor.",
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: "/",
+    siteName: "Indofishmart",
+    title: "Indofishmart | Frozen Seafood untuk Rumah dan Usaha",
+    description:
+      "Pilihan ikan, fillet, udang, dan seafood untuk kebutuhan retail, HORECA, reseller, dan distributor.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Indofishmart — Frozen Seafood untuk Rumah dan Usaha",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Indofishmart | Frozen Seafood untuk Rumah dan Usaha",
+    description:
+      "Pilihan ikan, fillet, udang, dan seafood untuk kebutuhan retail, HORECA, reseller, dan distributor.",
+    images: ["/og.png"],
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="id">
+      <body>
+        <div id="top" className="site-shell">
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </div>
+      </body>
+    </html>
+  );
+}
