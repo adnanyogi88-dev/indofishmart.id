@@ -12,9 +12,9 @@ export default function ArticleIndexPage() {
   return (
     <main>
       <PageHero
-        eyebrow="PUSAT INFORMASI"
-        title={`${articles.length} artikel Indofishmart berhasil dipulihkan.`}
-        description="Temukan kembali materi resep, panduan produk, informasi frozen food, serta peluang bisnis dari arsip situs lama."
+        eyebrow="FRANCHISE FROZEN FOOD INDOFISHMART"
+        title="Bangun bisnis frozen food dan tumbuh bersama Indofishmart."
+        description="Temukan peluang usaha, panduan produk, dan strategi bisnis frozen food untuk membantu Anda memulai, menjangkau pelanggan, serta mengembangkan pasar di wilayah Anda."
       />
       <section className="section article-index-section">
         <div className="container">
