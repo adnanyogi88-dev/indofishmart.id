@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ContactBanner } from "@/components/ContactBanner";
 import { PageHero } from "@/components/PageHero";
 import { products } from "@/data/products";
+import { siteAsset } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Produk Ikan dan Frozen Seafood | Indofishmart",
@@ -23,7 +24,7 @@ export default function ProductsPage() {
             {products.map((product) => (
               <article className="product-card" key={product.name}>
                 <div className="product-image">
-                  <img src={product.image} alt={product.name} />
+                  <img src={siteAsset(product.image)} alt={product.name} />
                   <span className="product-category">{product.category}</span>
                 </div>
                 <div className="product-content">

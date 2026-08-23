@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ContactBanner } from "@/components/ContactBanner";
 import { PageHero } from "@/components/PageHero";
+import { siteAsset } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Tentang Indofishmart",
@@ -17,7 +18,7 @@ export default function AboutPage() {
       />
       <section className="section">
         <div className="container detail-grid">
-          <div className="detail-image"><img src="/images/ikan-laut.jpg" alt="Pilihan ikan laut Indofishmart" /></div>
+          <div className="detail-image"><img src={siteAsset("/images/ikan-laut.jpg")} alt="Pilihan ikan laut Indofishmart" /></div>
           <div className="detail-copy">
             <p className="eyebrow">FOKUS LAYANAN</p>
             <h2>Produk relevan, pembelian fleksibel, komunikasi sederhana.</h2>

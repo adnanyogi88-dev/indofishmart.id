@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Arrow } from "@/components/Arrow";
 import { ContactBanner } from "@/components/ContactBanner";
 import { PageHero } from "@/components/PageHero";
+import { siteAsset } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Kemitraan dan Pasokan Bisnis | Indofishmart",
@@ -19,7 +20,7 @@ export default function PartnershipPage() {
       />
       <section className="section">
         <div className="container detail-grid">
-          <div className="detail-image"><img src="/images/outlet-bekasi.webp" alt="Mitra dan outlet Indofishmart" /></div>
+          <div className="detail-image"><img src={siteAsset("/images/outlet-bekasi.webp")} alt="Mitra dan outlet Indofishmart" /></div>
           <div className="detail-copy">
             <p className="eyebrow">MITRA USAHA</p>
             <h2>Sesuaikan produk, volume, dan jadwal kebutuhan.</h2>

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { siteAsset, siteUrl } from "@/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://indofishmart.id"),
+  metadataBase: new URL(siteUrl),
   title: "Indofishmart | Frozen Seafood untuk Rumah dan Usaha",
   description:
     "Pilihan ikan, fillet, udang, dan seafood untuk kebutuhan retail, HORECA, reseller, dan distributor.",
@@ -46,9 +48,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const bodyStyle = {
+    "--contact-background-image": `url("${siteAsset("/images/udang-vaname.jpg")}")`,
+  } as CSSProperties;
+
   return (
     <html lang="id">
-      <body>
+      <body style={bodyStyle}>
         <div id="top" className="site-shell">
           <SiteHeader />
           {children}

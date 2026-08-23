@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Arrow } from "@/components/Arrow";
 import { PageHero } from "@/components/PageHero";
-import { siteContact } from "@/data/site";
+import { siteAsset, siteContact } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Outlet Indofishmart Bekasi",
@@ -18,7 +18,7 @@ export default function OutletPage() {
       />
       <section className="section">
         <div className="container detail-grid">
-          <div className="detail-image"><img src="/images/outlet-bekasi.webp" alt="Outlet Indofishmart Bekasi" /></div>
+          <div className="detail-image"><img src={siteAsset("/images/outlet-bekasi.webp")} alt="Outlet Indofishmart Bekasi" /></div>
           <div className="detail-copy">
             <p className="eyebrow">BEKASI, JAWA BARAT</p>
             <h2>Indofishmart Bekasi</h2>

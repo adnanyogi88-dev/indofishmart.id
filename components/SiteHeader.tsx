@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Arrow } from "@/components/Arrow";
+import { siteAsset } from "@/data/site";
 
 const navigation = [
   ["Beranda", "/"],
@@ -29,7 +30,7 @@ export function SiteHeader() {
 
       <div className="container navigation">
         <Link className="brand" href="/" aria-label="Indofishmart beranda">
-          <img src="/images/indofishmart-logo.png" alt="Indofishmart" />
+          <img src={siteAsset("/images/indofishmart-logo.png")} alt="Indofishmart" />
         </Link>
 
         <nav className="desktop-nav" aria-label="Navigasi utama">

@@ -7,6 +7,7 @@ import { ArticleCard } from "@/components/ArticleCard";
 import { ContactBanner } from "@/components/ContactBanner";
 import { articles } from "@/data/articles";
 import { productCategories, ProductCategory, products } from "@/data/products";
+import { siteAsset } from "@/data/site";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<ProductCategory>("Semua");
@@ -46,10 +47,10 @@ export default function Home() {
 
           <div className="hero-visual" aria-label="Pilihan produk Indofishmart">
             <div className="hero-image-main">
-              <img src="/images/dori-fillet.webp" alt="Dori fillet Indofishmart" />
+              <img src={siteAsset("/images/dori-fillet.webp")} alt="Dori fillet Indofishmart" />
             </div>
             <div className="hero-image-secondary">
-              <img src="/images/udang-vaname.jpg" alt="Udang vaname" />
+              <img src={siteAsset("/images/udang-vaname.jpg")} alt="Udang vaname" />
             </div>
             <div className="quality-card">
               <span className="quality-mark" aria-hidden="true">✓</span>
@@ -106,7 +107,7 @@ export default function Home() {
             {visibleProducts.map((product) => (
               <article className="product-card" key={product.name}>
                 <div className="product-image">
-                  <img src={product.image} alt={product.name} />
+                  <img src={siteAsset(product.image)} alt={product.name} />
                   <span className="product-category">{product.category}</span>
                 </div>
                 <div className="product-content">
@@ -126,7 +127,7 @@ export default function Home() {
       <section id="bisnis" className="business-section">
         <div className="container business-grid">
           <div className="business-image">
-            <img src="/images/outlet-bekasi.webp" alt="Outlet Indofishmart Bekasi" />
+            <img src={siteAsset("/images/outlet-bekasi.webp")} alt="Outlet Indofishmart Bekasi" />
             <div className="business-image-label"><span>Outlet Bekasi</span><strong>Indofishmart</strong></div>
           </div>
           <div className="business-copy">

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArticleCard } from "@/components/ArticleCard";
 import { ContactBanner } from "@/components/ContactBanner";
 import { ArticleRecord, articles, formatArticleDate } from "@/data/articles";
+import { siteAsset, siteHtml, siteUrl } from "@/data/site";
 
 export function ArticleDetail({
   article,
@@ -20,8 +21,8 @@ export function ArticleDetail({
     description: article.excerpt,
     datePublished: article.date,
     author: { "@type": "Organization", name: "Indofishmart" },
-    image: `https://indofishmart.id${article.image}`,
-    mainEntityOfPage: `https://indofishmart.id/${article.slug}/`,
+    image: `${siteUrl}${article.image}`,
+    mainEntityOfPage: `${siteUrl}/${article.slug}/`,
   };
 
   return (
@@ -47,9 +48,9 @@ export function ArticleDetail({
 
         <div className="container article-reading-layout">
           <div className="article-feature-image">
-            <img src={article.image} alt={article.title} />
+            <img src={siteAsset(article.image)} alt={article.title} />
           </div>
-          <div className="article-body" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+          <div className="article-body" dangerouslySetInnerHTML={{ __html: siteHtml(contentHtml) }} />
           <aside className="article-archive-note">
             <strong>Catatan arsip</strong>
             <p>Artikel ini dipulihkan dari publikasi asli website Indofishmart.</p>

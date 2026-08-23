@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { siteContact } from "@/data/site";
+import { siteAsset, siteContact } from "@/data/site";
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src="/images/indofishmart-logo.png" alt="Indofishmart" />
+          <img src={siteAsset("/images/indofishmart-logo.png")} alt="Indofishmart" />
           <p>Pasokan ikan dan seafood untuk kebutuhan rumah hingga bisnis.</p>
         </div>
         <div>

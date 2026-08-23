@@ -813,7 +813,7 @@ img {
   border-radius: 26px 4px 26px 4px;
   background:
     linear-gradient(110deg, rgba(6, 43, 82, 0.96), rgba(6, 74, 136, 0.92)),
-    url("/images/udang-vaname.jpg") center / cover;
+    var(--contact-background-image, url("/images/udang-vaname.jpg")) center / cover;
   color: #ffffff;
   padding: 60px;
 }

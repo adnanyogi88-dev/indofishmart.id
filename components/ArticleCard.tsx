@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Arrow } from "@/components/Arrow";
 import { ArticleRecord, formatArticleDate } from "@/data/articles";
+import { siteAsset } from "@/data/site";
 
 export function ArticleCard({ article }: { article: ArticleRecord }) {
   const articleUrl = `/${article.slug}/`;
@@ -8,7 +9,7 @@ export function ArticleCard({ article }: { article: ArticleRecord }) {
   return (
     <article className="article-card">
       <Link className="article-image" href={articleUrl}>
-        <img src={article.image} alt={article.title} />
+        <img src={siteAsset(article.image)} alt={article.title} />
       </Link>
       <div className="article-content">
         <span>{article.category}</span>
