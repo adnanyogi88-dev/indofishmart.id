@@ -45,6 +45,18 @@ LOCAL_ARTICLE_IMAGES = {
     if path.is_file()
 }
 
+ARTICLE_IMAGE_MANIFEST_PATH = ROOT / "content" / "article-image-manifest.json"
+RESTORED_ARTICLE_IMAGES = (
+    {
+        slug: record["image"]
+        for slug, record in json.loads(
+            ARTICLE_IMAGE_MANIFEST_PATH.read_text(encoding="utf-8")
+        ).items()
+    }
+    if ARTICLE_IMAGE_MANIFEST_PATH.exists()
+    else {}
+)
+
 
 def normalize_slug(value: str) -> str:
     value = unicodedata.normalize("NFKC", unquote(value or "")).strip().strip("/")
@@ -237,6 +249,8 @@ def iso_date(item: ET.Element) -> str:
 
 
 def local_image(slug: str, title: str, category: str) -> str:
+    if slug in RESTORED_ARTICLE_IMAGES:
+        return RESTORED_ARTICLE_IMAGES[slug]
     if slug in LOCAL_ARTICLE_IMAGES:
         return LOCAL_ARTICLE_IMAGES[slug]
     search = f"{slug} {title} {category}".lower()

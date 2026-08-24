@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <img src={siteAsset("/images/indofishmart-logo.png")} alt="Indofishmart" />
+          <img src={siteAsset("/images/indofishmart-logo-footer.png")} alt="Indofishmart" />
           <p>Pasokan ikan dan seafood untuk kebutuhan rumah hingga bisnis.</p>
         </div>
         <div>
