@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArticleCard } from "@/components/ArticleCard";
 import { ContactBanner } from "@/components/ContactBanner";
 import { ArticleRecord, articles, formatArticleDate } from "@/data/articles";
+import { getMeatfishBacklink } from "@/data/meatfish-backlinks";
 import { siteAsset, siteHtml, siteUrl } from "@/data/site";
 
 export function ArticleDetail({
@@ -14,6 +15,7 @@ export function ArticleDetail({
   const related = articles
     .filter((item) => item.slug !== article.slug && item.category === article.category)
     .slice(0, 3);
+  const meatfishBacklink = getMeatfishBacklink(article);
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -50,7 +52,16 @@ export function ArticleDetail({
           <div className="article-feature-image">
             <img src={siteAsset(article.image)} alt={article.title} />
           </div>
-          <div className="article-body" dangerouslySetInnerHTML={{ __html: siteHtml(contentHtml) }} />
+          <div className="article-body">
+            <div dangerouslySetInnerHTML={{ __html: siteHtml(contentHtml) }} />
+            <p className="article-contextual-backlink">
+              <strong>Baca juga:</strong> {meatfishBacklink.context}{" "}
+              <a href={meatfishBacklink.href} target="_blank" rel="noopener noreferrer">
+                {meatfishBacklink.anchor}
+              </a>
+              .
+            </p>
+          </div>
           <aside className="article-archive-note">
             <strong>Catatan arsip</strong>
             <p>Artikel ini dipulihkan dari publikasi asli website Indofishmart.</p>
