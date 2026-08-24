@@ -3,6 +3,8 @@ import type { ArticleRecord } from "@/data/articles";
 export type MeatfishBacklink = {
   href: string;
   anchor: string;
+  companionHref: string;
+  companionAnchor: string;
   context: string;
 };
 
@@ -810,7 +812,9 @@ export function getMeatfishBacklink(
 
   return {
     href: "https://meatfish.id" + destination,
-    anchor: topic + " di Meatfish",
+    anchor: topic + " di Meatfish.id",
+    companionHref: "https://meatfish.co.id" + destination,
+    companionAnchor: topic + " di Meatfish.co.id",
     context: getEditorialContext(article),
   };
 }

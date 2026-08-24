@@ -48,4 +48,8 @@ test("renders representative recovered articles on their original URLs", async (
   const older = await render("/resep-masakan-dari-bahan-baku-ikan-mujair/");
   assert.match(recent, /Cara Membuat Sate Lilit Ikan Khas Bali/);
   assert.match(older, /Resep Masakan dari Bahan Baku Ikan Mujair/);
+  assert.match(recent, /https:\/\/meatfish\.id\//);
+  assert.match(recent, /https:\/\/meatfish\.co\.id\//);
+  assert.match(older, /https:\/\/meatfish\.id\//);
+  assert.match(older, /https:\/\/meatfish\.co\.id\//);
 });

@@ -58,6 +58,10 @@ export function ArticleDetail({
               <strong>Baca juga:</strong> {meatfishBacklink.context}{" "}
               <a href={meatfishBacklink.href} target="_blank" rel="noopener noreferrer">
                 {meatfishBacklink.anchor}
+              </a>{" "}
+              dan{" "}
+              <a href={meatfishBacklink.companionHref} target="_blank" rel="noopener noreferrer">
+                {meatfishBacklink.companionAnchor}
               </a>
               .
             </p>
