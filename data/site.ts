@@ -1,6 +1,7 @@
 export const siteContact = {
   email: "halo@indofishmart.id",
-  whatsapp: "https://wa.link/sjh2e4",
+  whatsapp:
+    "https://wa.me/6285921327969?text=Halo%20Indofishmart%2C%20saya%20ingin%20bertanya%20mengenai%20produk%20dan%20kemitraan.",
   location: "Bekasi, Jawa Barat",
 };
 

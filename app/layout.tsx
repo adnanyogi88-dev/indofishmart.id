@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { siteAsset, siteUrl } from "@/data/site";
@@ -59,6 +60,7 @@ export default function RootLayout({
           <SiteHeader />
           {children}
           <SiteFooter />
+          <FloatingWhatsApp />
         </div>
       </body>
     </html>
