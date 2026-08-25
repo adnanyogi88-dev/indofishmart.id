@@ -627,7 +627,7 @@ const destinationsByArticleSlug: Record<string, string> = {
   "mengapa-ikan-beku-siap-dimasak-menjadi-pilihan-terbaik-untuk-keluarga-modern": "/cara-masak-ikan-mas-yang-lezat-dan-bergizi-bersama-meatfish/",
   "frozen-food-homemade-alternatif-sehat-dan-praktis-untuk-keluarga": "/frozen-food-premium-solusi-praktis-sehat-dan-lezat-bersama-meatfish/",
   "cara-analisa-usaha-franchise-agar-cepat-menghasilkan-keuntungan": "/franchise-es-buah-viral-peluang-usaha-segar-yang-cepat-menarik-pembeli/",
-  "apa-kelebihan-dari-indofishmart-jika-dibandingkan-dengan-kompetitor": "/produk-meatfish/",
+  "apa-kelebihan-dari-indofishmart-jika-dibandingkan-dengan-kompetitor": "/panduan-memilih-supplier-frozen-food/",
   "frozen-food-ikan-indofishmart-jaminan-halal-dan-kualitas-terbaik-untuk-konsumen-muslim": "/jenis-jenis-ikan-yang-bisa-dijadikan-frozen-food/",
   "tempat-jual-ikan-segar-secara-online": "/panduan-lengkap-mencari-tempat-jual-ikan-laut-terdekat-dan-kenapa-meatfish-jadi-pilihan-tepat/",
   "mengapa-cumi-cumi-segar-penting-untuk-bisnis-kuliner": "/supplier-cumi-berkualitas-ekspor-kunci-sukses-bisnis-seafood-anda/",
